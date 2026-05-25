@@ -111,7 +111,7 @@ namespace _24_5_2026
         {
             Console.WriteLine("Branch id is=" + bid);
             Console.WriteLine("Branch name is="+bname);
-            Console.WriteLine("bramch address is=:" + baddress);
+            Console.WriteLine("bramch address is=" + baddress);
         }
     }
     class Student:Branch
@@ -139,6 +139,7 @@ namespace _24_5_2026
         {
             Student std = new Student(1, "janani", "RIMS");
             std.StudentData();
+           // std.BranchData();
         }
     }
 }
