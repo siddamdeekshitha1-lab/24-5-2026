@@ -94,52 +94,80 @@ namespace _24_5_2026
     //    }
     //}
     //=================================================================================================
-      
+
     //-=-=-=-=-=-=-=-=-=-=-=-=-=INHERITANCE EXAMPLE-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    class Branch
+    //class Branch
+    //{
+    //    int bid;
+    //    string bname;
+    //    string baddress;
+    //    public Branch(int  bid, string bname, string baddress)
+    //    {
+    //        this.bid = bid;
+    //        this.bname = bname;
+    //        this.baddress = baddress;
+    //    }
+    //    public void BranchData()
+    //    {
+    //        Console.WriteLine("Branch id is=" + bid);
+    //        Console.WriteLine("Branch name is="+bname);
+    //        Console.WriteLine("bramch address is=" + baddress);
+    //    }
+    //}
+    //class Student:Branch
+    //{
+    //    int sid;
+    //    string sname;
+    //    string scollege;
+    //    public Student(int sid,string sname,string scollege):base(111,"AAA","Hyderabad")
+    //    {
+    //        this.sid= sid;
+    //        this.sname= sname;
+    //        this.scollege= scollege;
+    //    }
+    //    public void StudentData()
+    //    {
+    //        Console.WriteLine("Student id is:" + sid);
+    //        Console.WriteLine("Student name is:" + sname);
+    //        Console.WriteLine("Student  college is:" + scollege);
+    //        base.BranchData();
+    //    }
+    //}
+    //internal class program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Student std = new Student(1, "janani", "RIMS");
+    //        std.StudentData();
+    //       // std.BranchData();
+    //    }
+    //}
+
+    //====================================================================================================
+    //
+    //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=PROTECTED ACCESS MODIFIER=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    class Myclass
     {
-        int bid;
-        string bname;
-        string baddress;
-        public Branch(int  bid, string bname, string baddress)
+        protected int a = 10;
+        public void method1()
         {
-            this.bid = bid;
-            this.bname = bname;
-            this.baddress = baddress;
-        }
-        public void BranchData()
-        {
-            Console.WriteLine("Branch id is=" + bid);
-            Console.WriteLine("Branch name is="+bname);
-            Console.WriteLine("bramch address is=" + baddress);
+            Console.WriteLine("value of a is:" + a);
         }
     }
-    class Student:Branch
+    class NewClass : Myclass
     {
-        int sid;
-        string sname;
-        string scollege;
-        public Student(int sid,string sname,string scollege):base(111,"AAA","Hyderabad")
+        public void method2()
         {
-            this.sid= sid;
-            this.sname= sname;
-            this.scollege= scollege;
-        }
-        public void StudentData()
-        {
-            Console.WriteLine("Student id is:" + sid);
-            Console.WriteLine("Student name is:" + sname);
-            Console.WriteLine("Student  college is:" + scollege);
-            base.BranchData();
+            Console.WriteLine(" a value is: " + a);
         }
     }
     internal class program
     {
         static void Main(string[] args)
         {
-            Student std = new Student(1, "janani", "RIMS");
-            std.StudentData();
-           // std.BranchData();
+            NewClass obj = new NewClass();
+            obj.method1();
+            obj.method2();
         }
     }
 }
