@@ -2,8 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
+using System.Xml.Linq;
 
 namespace _24_5_2026
 {
@@ -146,28 +151,76 @@ namespace _24_5_2026
     //====================================================================================================
     //
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=PROTECTED ACCESS MODIFIER=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    class Myclass
+    //class Myclass
+    //{
+    //    protected int a = 10;
+    //    public void method1()
+    //    {
+    //        Console.WriteLine("value of a is:" + a);
+    //    }
+    //}
+    //class NewClass : Myclass
+    //{
+    //    public void method2()
+    //    {
+    //        Console.WriteLine(" a value is: " + a);
+    //    }
+    //}
+    //internal class program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        NewClass obj = new NewClass();
+    //        obj.method1();
+    //        obj.method2();
+    //    }
+    //}
+
+    class Student
     {
-        protected int a = 10;
-        public void method1()
+        protected int sid;
+        protected string sname;
+        protected string saddress;
+        public Student( int sid,string sname,string saddress)
         {
-            Console.WriteLine("value of a is:" + a);
+            this.sid = sid;
+            this.sname = sname;
+            this.saddress = saddress;
         }
+
     }
-    class NewClass : Myclass
+    class College:Student
     {
-        public void method2()
+        int cid;
+        string cname;
+        string caddress;
+        public College( int cid,string cname,string caddress):base(1,"janani","Hyderabad")
         {
-            Console.WriteLine(" a value is: " + a);
+            this.cid = cid;
+            this.cname = cname;
+            this.caddress = caddress;
         }
+        public void Collegedata()
+        {
+            Console.WriteLine("college id is:" + cid);
+            Console.WriteLine("College name is:" + cname);
+            Console.WriteLine("College address is:" + caddress);
+        }
+        public void Studentdata()
+        {
+            Console.WriteLine("Student id is:" + sid);
+            Console.WriteLine("student name is:" + sname);
+            Console.WriteLine("Student address is:" + saddress);
+        }
+
     }
     internal class program
     {
         static void Main(string[] args)
         {
-            NewClass obj = new NewClass();
-            obj.method1();
-            obj.method2();
+            College obj = new College(327, "RIMS", "Ameerpet");
+            obj.Studentdata();
+            obj.Collegedata();
         }
     }
 }
